@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>BOOKBIRD</title>
+  <meta property="og:image" content="//image.prntscr.com/image/93970e70e1f045e1aff76e05469008d8.png" />
+<meta property="og:image:secure_url" content="//image.prntscr.com/image/93970e70e1f045e1aff76e05469008d8.png" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:height" content="300" /><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'><link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
+
+<!-- <style>
+
+
+@import url('https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i');
+
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;600;700&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 62.5%;
+  }
+  *:not(i) {
+    font-family: "Poppins", sans-serif;
+  }
+
+
+
+header {
+  position: relative;
+  width: 100%;
+  background-color: #2a033f;
+  padding: 3rem 5rem;
+  z-index: 99999999;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+ 
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 4rem;
+}
+nav a {
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+nav  {
+  color: #000000;
+  font-weight: 700;
+}
+nav ul a {
+  color: #ffffff;
+  font-weight: 600;
+}
+nav ul a:hover {
+  border-bottom: 2px solid #ffffff;
+}
+section#home {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+h1 {
+  font-size: 4rem;
+}
+#ham-menu {
+  display: none;
+}
+nav ul.active {
+  left: 0;
+}
+@media only screen and (max-width: 991px) {
+  html {
+    font-size: 56.25%;
+  }
+  header {
+    padding: 2.2rem 5rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 50%;
+  }
+  #ham-menu {
+    display: block;
+    color: #ffffff;
+  }
+  nav a#logo,
+  #ham-menu {
+    font-size: 3.2rem;
+  }
+  nav ul {
+    background-color: black;
+    position: fixed;
+    left: -100vw;
+    top: 73.6px;
+    width: 100vw;
+    height: calc(100vh - 73.6px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: 1s;
+    gap: 0;
+  }
+}
+@media only screen and (max-width: 575px) {
+  html {
+    font-size: 46.87%;
+  }
+  header {
+    padding: 2rem 3rem;
+  }
+  nav ul {
+    top: 65.18px;
+    height: calc(100vh - 65.18px);
+  }
+}
+
+a#logo{
+  color: white;
+  font-family: 'DynaPuff', cursive;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+
+
+
+/* card css */
+
+.homsec{
+  width: 100%;
+  background-color: #3d0c57;
+}
+
+.cardcontent{
+  background-color: #3d0c57;
+}
+
+.shell{
+  padding:80px 0;
+  z-index: 999999;
+}
+.wsk-cp-product{
+  background:#8936b6;
+  color: #ddd;
+  padding:15px;
+  border-radius:6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  position:relative;
+  margin:20px auto;
+}
+.wsk-cp-img{
+  position:absolute;
+  top:5px;
+  left:50%;
+  transform:translate(-50%);
+  -webkit-transform:translate(-50%);
+  -ms-transform:translate(-50%);
+  -moz-transform:translate(-50%);
+  -o-transform:translate(-50%);
+  -khtml-transform:translate(-50%);
+  width: 100%;
+  padding: 15px;
+  transition: all 0.2s ease-in-out;
+}
+.wsk-cp-img img{
+  width:100%;
+  height:270px;
+  transition: all 0.2s ease-in-out;
+  border-radius:6px;
+}
+.wsk-cp-product:hover .wsk-cp-img{
+  top:-20px;
+}
+.wsk-cp-product:hover .wsk-cp-img img{
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.wsk-cp-text{
+  padding-top:120%;
+}
+
+
+
+
+
+.wsk-cp-text .title-product{
+  text-align:center;
+}
+.wsk-cp-text .title-product h3{
+  font-size:20px;
+  font-weight:bold;
+  margin:10px auto;
+  /* overflow: hidden; */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  width:100%;
+}
+.wsk-cp-text .description-prod p{
+  margin:0;
+}
+/* Truncate */
+.wsk-cp-text .description-prod {
+  text-align:center;
+  width: 100%;
+  height:62px;
+  /* overflow: hidden; */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  margin-bottom:15px;
+}
+
+
+a.buy-btn{
+  display:block;
+  color:#212121;
+  text-align:center;
+  font-size: 18px;
+  width:35px;
+  height:35px;
+  line-height:35px;
+  border-radius:50%;
+  border:1px solid #212121;
+  transition: all 0.2s ease-in-out;
+}
+a.buy-btn:hover , a.buy-btn:active, a.buy-btn:focus{
+  border-color: #FF9800;
+  background: #FF9800;
+  color: #fff;
+  text-decoration:none;
+}
+.wsk-btn{
+  display:inline-block;
+  color:#212121;
+  text-align:center;
+  font-size: 18px;
+  transition: all 0.2s ease-in-out;
+  border-color: #FF9800;
+  background: #FF9800;
+  padding:12px 30px;
+  border-radius:27px;
+  margin: 0 5px;
+}
+.wsk-btn:hover, .wsk-btn:focus, .wsk-btn:active{
+  text-decoration:none;
+  color:#fff;
+}  
+.red{
+  color:#F44336;
+  font-size:22px;
+  display:inline-block;
+  margin: 0 5px;
+}
+@media screen and (max-width: 991px) {
+  .wsk-cp-product{
+    margin:40px auto;
+  }
+  .wsk-cp-product .wsk-cp-img{
+  top:-40px;
+}
+.wsk-cp-product .wsk-cp-img img{
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+  .wsk-cp-product .wsk-cp-text .category > span{
+  border-color:#ddd;
+  box-shadow: none;
+  padding: 11px 28px;
+}
+.wsk-cp-product .wsk-cp-text .category{
+  margin-top: 0px;
+}
+a.buy-btn{
+  border-color: #FF9800;
+  background: #FF9800;
+  color: #fff;
+}
+}
+
+
+/* ending of card css */
+
+
+</style> -->
+
+</head>
+
+  <body>
+
+    <header>
+      <nav>
+        <a href="/" id="logo">BOOKBIRD</a>
+        <i class="fas fa-bars" id="ham-menu"></i>
+        <ul id="nav-bar">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/recommend">Recommender</a>
+          </li>
+          <li>
+            <a href="/authrecommend">author recommendation</a>
+          </li>
+          <li>
+            <a href="/genre">Genre</a>
+          </li>
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  
+  
+  <!-- card started -->
+  
+  <div class="homsec">
+  <div class="container text-center cardcontent">
+  
+  
+  <div class="shell">
+    <div class="container">
+      <div class="row">
+  
+  
+        {% for i in range(book_name| length)%}
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img">
+              <img src="{{image[i]}}" alt="Product" class="img-responsive" />
+            </div>
+            <div class="wsk-cp-text">
+              
+              <div class="title-product">
+                <h3>{{book_name[i]}}</h3>
+              </div>
+              <div class="description-prod">
+               
+                <span>{{book_name[i]}} by </span>
+                <span>{{author[i]}}</span> 
+              </div>
+             
+            </div>
+          </div>
+        </div>
+  
+        {% endfor %}
+  
+  
+  
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img">
+              <img src="{{url_for('static', filename='images/bookdemo.jpg')}}" alt="Product" class="img-responsivejpg" alt="Product" class="img-responsive" />
+            </div>
+            <div class="wsk-cp-text">
+              
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img">
+              <img src="{{url_for('static', filename='images/bookdemo.jpg')}}" alt="Product" class="img-responsivejpg" alt="Product" class="img-responsive" />
+            </div>
+            <div class="wsk-cp-text">
+              
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img">
+              <img src="{{url_for('static', filename='images/bookdemo.jpg')}}" alt="Product" class="img-responsivejpg" alt="Product" class="img-responsive" />
+            </div>
+            <div class="wsk-cp-text">
+              
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img">
+              <img src="{{url_for('static', filename='images/bookdemo.jpg')}}" alt="Product" class="img-responsivejpg" alt="Product" class="img-responsive" />
+            </div>
+            <div class="wsk-cp-text">
+              
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"> <img src="{{url_for('static', filename='images/bookdemo.jpg')}}" alt="Product" class="img-responsivejpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+             
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="{{url_for('static', filename='images/bookdemo.jpg')}}" alt="Product" class="img-responsivejpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+             
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="{{url_for('static', filename='images/bookdemo.jpg')}}" alt="Product" class="img-responsivejpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+              
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+         
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-md-6">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img">
+              <img src="{{url_for('static', filename='images/bookdemo.jpg')}}" alt="Product" class="img-responsivejpg" alt="Product" class="img-responsive" />
+            </div>
+            <div class="wsk-cp-text">
+              
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+          
+            </div>
+          </div>
+        </div> -->
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="{{url_for('static', filename='images/bookdemo.jpg')}}" alt="Product" class="img-responsivejpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+              
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+           
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="{{url_for('static', filename='images/bookdemo.jpg')}}" alt="Product" class="img-responsivejpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+             
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+          
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="{{url_for('static', filename='images/bookdemo.jpg')}}" alt="Product" class="img-responsivejpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+             
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+          
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="{{url_for('static', filename='images/bookdemo.jpg')}}" alt="Product" class="img-responsivejpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+             
+              <div class="title-product">
+                <h3>My face not my heart</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+          
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-6">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img"><img src="{{url_for('static', filename='images/bookdemo.jpg')}}" alt="Product" class="img-responsivejpg" alt="Product" class="img-responsive" /></div>
+            <div class="wsk-cp-text">
+            
+              <div class="title-product">
+                <h3>My face not my heart cvf ggf gfg g</h3>
+              </div>
+              <div class="description-prod">
+                <p>Description Product tell me how to change playlist height size like 600px in html5 player. player good work now check this link</p>
+              </div>
+            
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- ending of card -->
+  
+  
+  <script src="script.js"></script>
+    
+  </body>
+
+
+
+<!--   
+  <body style="background-color: rgba(169, 188, 174, 0.797)">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand m-3 fs-1" href="#">Book Recommender</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link fs-4" href="#">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4" href="/recommend">Recommender</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4" href="#">Contact</a>
+            </li>
+           
+          </ul>
+          
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-black m-3" style="font-size: 50px">Top 50 books</h1>
+            </div>
+
+            {% for i in range(book_name| length)%}
+            <div class="col-md-2 m-4 " style=" margin-right:100px">
+              <div class="card">
+                  <div class="card-body">
+                      <img class="card-img-top" src="{{image[i]}}">
+                      <h4 class="text-black">{{book_name[i]}}</h4>
+                      <h5 class="text-black">{{author[i]}}</h5>
+                      <h5 class="text-black">Votes - {{votes[i]}}</h5>
+                      <h5 class="text-black">Rating - 7{{rating[i]}}</h5>
+                  </div>
+              </div>
+          </div>
+            {% endfor %}
+
+            
+
+            
+       
+        </div>
+    </div>
+  </body> -->
+
+
+  <!-- <script>
+    let hamMenuIcon = document.getElementById("ham-menu");
+let navBar = document.getElementById("nav-bar");
+let navLinks = navBar.querySelectorAll("li");
+
+hamMenuIcon.addEventListener("click", () => {
+  navBar.classList.toggle("active");
+  hamMenuIcon.classList.toggle("fa-times");
+});
+navLinks.forEach((navLinks) => {
+  navLinks.addEventListener("click", () => {
+    navBar.classList.remove("active");
+    hamMenuIcon.classList.toggle("fa-times");
+  });
+});
+  </script> -->
+
+
+  <script src="{{ url_for('static',filename='script.js') }}"> </script>
+</html>
